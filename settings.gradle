@@ -1,0 +1,2 @@
+rootProject.name = 'cas'
+include "cas-config", "cas-tools", "cas-core",  "cas-subA", "cas-subB"

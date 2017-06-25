@@ -1,0 +1,38 @@
+apply from: 'dependencyDefinitions.gradle'
+apply plugin: 'application'
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+	}
+}
+
+allprojects {
+    repositories {
+		mavenCentral()
+	}
+    group = 'com.ibm.cas'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'spring-boot'
+
+	sourceCompatibility = JavaVersion.VERSION_1_8
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    configurations {
+        all*.exclude module: 'spring-boot-starter-logging'
+    }
+
+    dependencies {
+        testCompile(
+                libraries.'spring-boot-starter-test'
+        )
+    }
+}
+

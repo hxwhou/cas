@@ -1,0 +1,15 @@
+archivesBaseName = 'cas-core'
+
+dependencies {
+
+    compile(
+        libraries.'spring-boot-starter-data-jpa',
+        libraries.'spring-boot-starter-jdbc',
+        libraries.'spring-boot-starter-data-rest',
+        libraries.'mysql-driven',
+        project(':cas-config'),
+        project(':cas-tools')
+    )
+	
+	compile(fileTree(dir:'libs', include:'**/*.jar'))
+}

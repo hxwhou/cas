@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF" name="CAS">
+	<Properties>
+		<Property name="baseDir">logs</Property>
+		<Property name="archiveName">cas-%d{MM-dd-yyyy}-%i.log.zip</Property>
+		<Property name="logPattern">[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%4t] %-36c: %m%n</Property>
+	</Properties>
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${logPattern}" />
+		</Console>
+		<RollingFile name="RollingFile" fileName="${baseDir}/app.log"
+			filePattern="${baseDir}/$${date:yyyy-MM}/${archiveName}">
+			<PatternLayout>
+				<Pattern>${logPattern}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<!-- <TimeBasedTriggeringPolicy /> -->
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</appenders>
+	<loggers>
+		<root level="info">
+			<appender-ref ref="Console" />
+			<appender-ref ref="RollingFile" />
+		</root>
+	</loggers>
+</configuration>

@@ -1,0 +1,7 @@
+archivesBaseName = 'cas-config'
+
+dependencies {
+    compile(
+            libraries.'spring-boot-starter'
+    )
+}

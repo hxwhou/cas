@@ -1,0 +1,40 @@
+/**
+ * 依赖包的定义。
+ *
+ * 这种定义方式的优点是在顶级项目目录下引入，在子项目中也可以直接用了。
+ *
+ */
+ext.versions = [
+        springBoot        : '1.4.0.RELEASE',
+        springBootMybaits : '1.1.1',
+        jedis             : '2.9.0',
+        commonsLang3      : '3.3.2',
+        commonsIo         : '2.4',
+        commonsCodec      : '1.10',
+        mysql             : '5.1.34',
+        dbcp              : '1.4'
+]
+
+// 各种可能会用到的jar包
+ext.libraries = [
+        // Spring Boot
+        "spring-boot-starter"                : "org.springframework.boot:spring-boot-starter:${versions.springBoot}",
+        "spring-boot-starter-web"            : "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}",
+        "spring-boot-starter-aop"            : "org.springframework.boot:spring-boot-starter-aop:${versions.springBoot}",
+        "spring-boot-starter-log4j2"         : "org.springframework.boot:spring-boot-starter-log4j2:${versions.springBoot}",
+        "spring-boot-mybaits"                : "org.mybatis.spring.boot:mybatis-spring-boot-starter:${versions.springBootMybaits}",
+        "spring-boot-starter-test"           : "org.springframework.boot:spring-boot-starter-test:${versions.springBoot}",
+        "spring-boot-starter-tomcat"         : "org.springframework.boot:spring-boot-starter-tomcat:${versions.springBoot}",
+        "spring-boot-starter-jdbc"           : "org.springframework.boot:spring-boot-starter-jdbc:${versions.springBoot}",
+        "spring-boot-starter-data-rest"      : "org.springframework.boot:spring-boot-starter-data-rest:${versions.springBoot}",
+        "spring-boot-starter-data-jpa"       : "org.springframework.boot:spring-boot-starter-data-jpa:${versions.springBoot}",
+        // Commons
+        "commons-io"                         : "commons-io:commons-io:${versions.commonsIo}",
+        "commons-lang3"                      : "org.apache.commons:commons-lang3:${versions.commonsLang3}",
+        "commons-codec"                      : "commons-codec:commons-codec:${versions.commonsCodec}",
+        // Cache
+        "jedis"                              : "redis.clients:jedis:${versions.jedis}",
+        // DB
+        "mysql-driven"                       : "mysql:mysql-connector-java:${versions.mysql}",
+        "dbcp"                               : "commons-dbcp:commons-dbcp:${versions.dbcp}"
+]

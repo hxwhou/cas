@@ -1,0 +1,7 @@
+archivesBaseName = 'cas-tools'
+
+dependencies {
+    compile(
+        libraries.'spring-boot-starter-log4j2'
+    )
+}

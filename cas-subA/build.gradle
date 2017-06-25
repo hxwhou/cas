@@ -1,0 +1,21 @@
+archivesBaseName = 'cas-subA'
+
+apply plugin: 'war'
+
+war {
+	baseName = 'cas-subA'
+}
+
+dependencies {
+
+    compile(
+        project(':cas-core')
+    )
+    
+    compile(libraries.'spring-boot-starter-web'){
+		exclude module : 'org.springframework.boot:spring-boot-starter-tomcat'
+	}
+	
+	providedRuntime(libraries.'spring-boot-starter-tomcat')
+}
+
